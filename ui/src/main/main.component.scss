@@ -1,0 +1,112 @@
+.app {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+// .app .app-header {
+
+// }
+
+.app .app-container {
+  flex-grow: 1;
+}
+
+.app .app-header #image {
+  display: block;
+  height: 150px;
+  margin: 0px auto;
+  padding: 10px 0px;
+}
+
+.headerbar {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  background-color: #8f899e;
+  border: #000 solid 3px;
+}
+
+.split-line {
+  margin: 0px 20px;
+}
+
+.headerbar .header-code {
+  display: flex;
+  flex-flow: row;
+  justify-content: right;
+  padding: 5px 15px 5px;
+  width: 50%;
+  border-right: #000 solid 3px;
+}
+
+.headerbar .header-output {
+  display: flex;
+  flex-flow: row;
+  justify-content: left;
+  width: 50%;
+  text-align: center;
+}
+
+.headerbar .header-output label {
+  padding: 10px 10px 10px 30px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.run {
+  background-color: #fff000;
+  border-radius: 3px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 15px;
+  text-align: center;
+  transition: 200ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100px;
+}
+
+.run:active {
+  outline: 0;
+  background: #ff7800;
+  box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.orientation-icon {
+  display: inline-block;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\f0db';
+}
+
+.app-container {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: #000 solid 6px;
+  overflow-y: hidden;
+}
+
+.p-splitter-gutter {
+  background: grey;
+}
+
+.p-splitter-gutter-handle {
+  background: #000;
+}
+
+.code-area {
+  width: 100%;
+  //overflow: hidden;
+}
+
+.CodeMirror {
+  height: 100%;
+}

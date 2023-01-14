@@ -1,0 +1,18 @@
+{
+  "name": "codecom",
+  "version": "1.0.0",
+  "description": "Online-Compiler",
+  "author": "sangg, jayesh",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "install": "lerna bootstrap --ignore-prepublish",
+    "build": "lerna run build",
+    "clean": "lerna clean",
+    "debugui": "nx run online-compiler:ngserve"
+  },
+  "devDependencies": {
+    "lerna": "^5.4.3",
+    "nx": "14.5.10"
+  }
+}
