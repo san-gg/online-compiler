@@ -17,8 +17,35 @@
       [gutterSize]="10"
     >
       <ng-template pTemplate>
-        <div class="code-area">
+        <div id="code-block" class="code-area">
           <!-- Code Editor -->
+        </div>
+      </ng-template>
+      <ng-template pTemplate> Panel 2 </ng-template>
+    </p-splitter>
+  </div>
+</div>
+
+<!-- <div class="app">
+  <div class="app-header">
+    <img id="image" src="assets/logo_t.svg" alt="Logo" />
+    <div class="headerbar">
+      <div class="header-code">
+        <button class="run">Run</button>
+      </div>
+      <div class="header-output">
+        <label class="label-output" for="text">Output</label>
+      </div>
+    </div>
+  </div>
+  <div class="app-container">
+    <p-splitter
+      [style]="{ height: '100%' }"
+      [layout]="splitterLayout"
+      [gutterSize]="10"
+    >
+      <ng-template pTemplate>
+        <div class="code-area">
           <ngx-codemirror #codemirror [options]="codeMirrorOptions">
           </ngx-codemirror>
         </div>
@@ -26,4 +53,4 @@
       <ng-template pTemplate> Panel 2 </ng-template>
     </p-splitter>
   </div>
-</div>
+</div> -->
