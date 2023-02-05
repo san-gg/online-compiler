@@ -1,0 +1,14 @@
+<div class="codecom-btns file-tab">
+  <ng-template [ngIf]="editFileName" [ngIfElse]="elseBlock">
+    <input
+      type="text"
+      class="change-file-name"
+      value="{{ fileName }}"
+      (blur)="changeFileName($event)"
+    />
+  </ng-template>
+  <ng-template #elseBlock>
+    <div class="file-name" (dblclick)="renameFile($event)">{{ fileName }}</div>
+    <div class="close-tab" (click)="closeTab($event)"></div>
+  </ng-template>
+</div>

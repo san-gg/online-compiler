@@ -4,12 +4,16 @@ import {
   OnInit,
   ViewEncapsulation,
   AfterViewInit,
+  ViewContainerRef,
+  ViewChild,
+  ComponentRef,
 } from '@angular/core';
 
 import { EditorView } from '@codemirror/view';
 import { cpp } from '@codemirror/lang-cpp';
 import { basicSetup } from 'codemirror';
 import { materialDark } from '@ddietr/codemirror-themes/material-dark';
+import { FileTabComponent } from './components/file-tab/file-tab.component';
 
 @Component({
   selector: 'main',
@@ -18,8 +22,12 @@ import { materialDark } from '@ddietr/codemirror-themes/material-dark';
   encapsulation: ViewEncapsulation.None,
 })
 export class MainComponent implements OnInit, AfterViewInit {
+  editFileName: boolean = false;
   splitterLayout: string = 'horizontal';
   codeEditor: EditorView | null = null;
+  fileName: string = 'Main.cpp';
+  @ViewChild('viewContainerRef', { read: ViewContainerRef })
+  viewContainerRef?: ViewContainerRef;
   // codeMirrorOptions: any = {
   //   theme: 'material',
   //   lineNumbers: true,
@@ -49,6 +57,8 @@ export class MainComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // this.addFileTabs();
+
     console.log(this._elementRef.nativeElement);
     const element: HTMLElement | null = document.getElementById('code-block');
     console.log(element);
@@ -56,5 +66,15 @@ export class MainComponent implements OnInit, AfterViewInit {
       extensions: [cpp(), basicSetup, materialDark],
     });
     element?.append(this.codeEditor.dom);
+  }
+
+  addFileTabs() {
+    let componentRef: ComponentRef<FileTabComponent> | undefined =
+      this.viewContainerRef?.createComponent<FileTabComponent>(
+        FileTabComponent
+      );
+    componentRef?.instance.addComponetRef(componentRef);
+    // componentRef?.instance.fileTabComponentRef = componentRef;
+    // componentRef?.instance.fileTabComponentRef = componentRef as any;
   }
 }

@@ -1,0 +1,52 @@
+.file-tab {
+  display: flex;
+  margin: 0px 5px;
+  border-radius: 7px;
+  font-size: 16px;
+  min-width: 145px;
+  max-width: 155px;
+  position: relative;
+}
+
+.file-name {
+  width: 85%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.change-file-name {
+  width: 100%;
+  border: 0;
+  border-bottom-color: currentcolor;
+  border-bottom-style: none;
+  border-bottom-width: 0px;
+  border-bottom: 2px solid;
+  outline: 0;
+  background: transparent;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.close-tab {
+  width: 15%;
+  // padding-left: 5px;
+}
+
+.close-tab::after,
+.close-tab::before {
+  position: absolute;
+  // left: 15px;
+  content: ' ';
+  height: 15px;
+  width: 2px;
+  background-color: black;
+}
+
+.close-tab::before {
+  transform: rotate(45deg);
+}
+
+.close-tab::after {
+  transform: rotate(-45deg);
+}

@@ -4,8 +4,10 @@
     <div class="headerbar">
       <div class="header-code">
         <div class="code-tabs">
-          <button class="codecom-btns file-tab">Main.cpp</button>
-          <button class="codecom-btns file-tab">Main.cpp</button>
+          <ng-template #viewContainerRef> </ng-template>
+          <!-- <file-tab></file-tab> -->
+
+          <div class="add-file-tabs" (click)="addFileTabs()">&#43;</div>
         </div>
         <div class="editor-option"></div>
         <div class="run-code">
